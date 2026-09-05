@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b3926" />
+    <meta name="description" content="Emergency Intelligence — a simpler way to reach the right emergency response." />
+    <title>Emergency Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><img src="./public/emergency-intelligence-mark.png" alt="" /><span><strong>EMERGENCY</strong><small>INTELLIGENCE</small></span></div>
+        <p class="side-label">SERVICES</p>
+        <nav id="service-nav" aria-label="Services">
+          <button class="nav-item active" data-label="For people"><span>⌖</span>For people</button>
+          <button class="nav-item" data-label="Control room"><span>▦</span>Control room</button>
+          <button class="nav-item has-badge" data-label="Emergencies"><span>♧</span>Emergencies <b>4</b></button>
+          <button class="nav-item" data-label="Ambulance fleet"><span>▱</span>Ambulance fleet</button>
+          <button class="nav-item" data-label="Hospitals"><span>♜</span>Hospitals</button>
+          <button class="nav-item" data-label="Analytics"><span>⌁</span>Analytics</button>
+          <button class="nav-item" data-label="Crew view"><span>⌁</span>Crew view</button>
+          <button class="nav-item" data-label="Hospital desk"><span>♧</span>Hospital desk</button>
+          <button class="nav-item" data-label="Administration"><span>⚙</span>Administration</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="system"><i></i><div>System operational<small>Last sync · just now</small></div></div>
+          <button class="dispatcher"><span class="avatar">DR</span><div><strong>Dispatch room</strong><small>Control officer</small></div><span class="arrow">›</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="status"><i></i>Live operations</div><span class="date">Wednesday, 03 Sep 2026</span>
+          <select id="language" aria-label="Choose language"><option>English</option><option>हिन्दी</option><option>தமிழ்</option><option>తెలుగు</option><option>অসমীয়া</option></select>
+          <button class="role">Dispatcher <span>⌄</span></button><button class="icon-btn" aria-label="Notifications">♧</button>
+        </header>
+
+        <section class="content">
+          <div class="eyebrow">⌁ EMERGENCY INTELLIGENCE · FOR EVERYONE</div>
+          <div class="headline-row"><div><h1>Care that moves with you.</h1><p>A simpler way to reach the right emergency response when every minute matters.</p></div><div class="top-actions"><button class="help-btn" id="helpBtn">Need help? <span>↗</span></button><button class="sos-btn" data-action="sos">♧ &nbsp; Emergency SOS</button></div></div>
+
+          <section class="hero-card">
+            <div class="hero-copy"><div class="eyebrow dark">PUBLIC RESPONSE PORTAL</div><h2>Share the signal. We’ll route the response.</h2><p>Tell us what you see. We’ll confirm your location, find the right team, and keep you updated from the first report to arrival.</p><div class="hero-actions"><button class="sos-btn" data-action="sos">♧ &nbsp; Emergency SOS</button><button class="outline-btn" data-action="report">Report an accident <span>↗</span></button></div></div>
+            <div class="dispatch-time"><strong>4:18</strong><span>average dispatch time</span></div>
+          </section>
+
+          <div class="cards-grid">
+            <section class="info-card"><div class="eyebrow dark">CASE TRACKING</div><h3>Know what happens next</h3><p>Enter a case ID to see the assigned ambulance, current route, and estimated arrival.</p><div class="case-input"><span>⌕</span><input id="caseId" placeholder="CASE-2026-000124" value="CASE-2026-000124" /></div><button class="track-btn" id="trackBtn">Track case <span>›</span></button><div id="trackResult" class="result" hidden></div></section>
+            <section class="info-card hospital-card"><div class="eyebrow dark">FIND CARE</div><h3>Hospitals near you</h3><p>We check capacity before routing so the right team arrives at a hospital ready to receive you.</p><div class="capacity"><strong>4</strong><span>emergency-ready hospitals<br />in the network</span></div><button class="outline-btn" id="hospitalBtn">View hospital capacity <span>›</span></button></section>
+          </div>
+        </section>
+        <div class="manus-badge">◉ &nbsp; Made with Manus</div>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal" role="dialog" aria-modal="true"><button class="close" id="closeModal">×</button><div class="eyebrow dark" id="modalEyebrow">EMERGENCY RESPONSE</div><h2 id="modalTitle">Emergency SOS</h2><p id="modalText">Your location will be shared with the nearest response team. Stay calm — help is being coordinated.</p><button class="track-btn" id="modalAction">Confirm and continue</button></div></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

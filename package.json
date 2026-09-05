@@ -1,0 +1,10 @@
+{
+  "name": "emergency-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo Static frontend with Vercel serverless API ready"
+  }
+}
